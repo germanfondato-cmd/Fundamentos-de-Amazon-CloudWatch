@@ -1,0 +1,43 @@
+{
+  "widgets": [
+    {
+      "type": "metric",
+      "x": 0,
+      "y": 0,
+      "width": 12,
+      "height": 6,
+      "properties": {
+        "title": "Utilización de CPU (%) - Servidor Web",
+        "view": "timeSeries",
+        "stacked": false,
+        "region": "sa-east-1",
+        "stat": "Average",
+        "period": 300,
+        "yAxis": { "left": { "min": 0, "max": 100, "label": "Porcentaje" } },
+        "metrics": [
+          ["AWS/EC2", "CPUUtilization", "InstanceId", "i-0123456789abcdef0", { "label": "CPU Servidor Web" }]
+        ]
+      }
+    },
+    {
+      "type": "metric",
+      "x": 12,
+      "y": 0,
+      "width": 12,
+      "height": 6,
+      "properties": {
+        "title": "Tráfico de red (Bytes) - Servidor Web",
+        "view": "timeSeries",
+        "stacked": true,
+        "region": "sa-east-1",
+        "stat": "Sum",
+        "period": 300,
+        "yAxis": { "left": { "min": 0, "label": "Bytes" } },
+        "metrics": [
+          ["AWS/EC2", "NetworkIn", "InstanceId", "i-0123456789abcdef0", { "label": "Red entrante (NetworkIn)" }],
+          ["AWS/EC2", "NetworkOut", "InstanceId", "i-0123456789abcdef0", { "label": "Red saliente (NetworkOut)" }]
+        ]
+      }
+    }
+  ]
+}
